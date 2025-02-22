@@ -294,6 +294,7 @@ script = ExtResource("2_38nc6")
 position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_uqdod")
 animation = &"worried_blink"
+autoplay = "worried_blink"
 speed_scale = 4.0
 
 [node name="AnimationTree" type="AnimationTree" parent="Head"]
@@ -323,6 +324,9 @@ script = ExtResource("4_18ods")
 position = Vector2(-17.9895, -6.03141)
 rotation = 3.14159
 
+[node name="cooldown" type="Timer" parent="Body/Arm"]
+wait_time = 0.334
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Body"]
 position = Vector2(-2, -1)
 sprite_frames = SubResource("SpriteFrames_53238")
@@ -330,3 +334,5 @@ animation = &"walking"
 autoplay = "walking"
 frame_progress = 0.0924252
 speed_scale = 2.0
+
+[connection signal="timeout" from="Body/Arm/cooldown" to="Body/Arm" method="_on_cooldown_timeout"]
