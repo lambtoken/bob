@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://78ydajy1ls08"]
+
+[ext_resource type="PackedScene" uid="uid://brqkxwm2xe53t" path="res://objects/bob/bob.tscn" id="1_seitm"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Bob" parent="." instance=ExtResource("1_seitm")]
+position = Vector2(475, 180)
+scale = Vector2(3, 3)
