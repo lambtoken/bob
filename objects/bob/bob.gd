@@ -17,8 +17,7 @@ enum moods {
 }
 
 func _init() -> void:
-	pass
-
+	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED_HIDDEN)
 func _process(delta: float) -> void:
 	
 	var dist2Mouse: Vector2 = get_global_mouse_position() - self.position
@@ -45,6 +44,9 @@ func _process(delta: float) -> void:
 		
 	if Input.is_action_pressed("right"):
 		dir.x += 1
+		
+	if Input.is_action_pressed("shoot"):
+		$Body/Arm.shoot()
 	
 	velocity = dir.normalized() * SPEED
 	

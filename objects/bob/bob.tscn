@@ -319,6 +319,10 @@ texture = SubResource("AtlasTexture_ccqmr")
 offset = Vector2(-4, 9)
 script = ExtResource("4_18ods")
 
+[node name="Marker2D" type="Marker2D" parent="Body/Arm"]
+position = Vector2(-17.9895, -6.03141)
+rotation = 3.14159
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Body"]
 position = Vector2(-2, -1)
 sprite_frames = SubResource("SpriteFrames_53238")

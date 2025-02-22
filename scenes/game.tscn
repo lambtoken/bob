@@ -1,9 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://78ydajy1ls08"]
+[gd_scene load_steps=3 format=3 uid="uid://78ydajy1ls08"]
 
 [ext_resource type="PackedScene" uid="uid://brqkxwm2xe53t" path="res://objects/bob/bob.tscn" id="1_seitm"]
+[ext_resource type="Texture2D" uid="uid://58vt2vhc33kw" path="res://assets/paper.png" id="2_k0u6u"]
 
 [node name="Game" type="Node2D"]
 
 [node name="Bob" parent="." instance=ExtResource("1_seitm")]
 position = Vector2(475, 180)
 scale = Vector2(3, 3)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -2
+offset_right = 1152.0
+offset_bottom = 1024.0
+texture = ExtResource("2_k0u6u")
+stretch_mode = 1
