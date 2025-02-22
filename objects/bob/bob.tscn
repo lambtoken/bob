@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://brqkxwm2xe53t"]
+[gd_scene load_steps=36 format=3 uid="uid://brqkxwm2xe53t"]
 
 [ext_resource type="Script" path="res://objects/bob/bob.gd" id="1_3uvjw"]
 [ext_resource type="Texture2D" uid="uid://m4bof1ulwlhg" path="res://assets/bobsprites.png" id="2_5jaxw"]
@@ -151,6 +151,30 @@ tracks/0/keys = {
 "update": 1,
 "values": [&"worried_blink"]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 2)]
+}
 
 [sub_resource type="Animation" id="Animation_14ets"]
 resource_name = "back"
@@ -227,10 +251,39 @@ tracks/0/keys = {
 "values": [&"worried_blink"]
 }
 
+[sub_resource type="Animation" id="Animation_0d0ka"]
+resource_name = "head_squish"
+step = 0.0458
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.166667, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.14, 0.885), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 2), Vector2(0, 5.19), Vector2(0, 2)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q5qvl"]
 _data = {
 "RESET": SubResource("Animation_wtc4e"),
 "back": SubResource("Animation_14ets"),
+"head_squish": SubResource("Animation_0d0ka"),
 "neutral": SubResource("Animation_xk1uq"),
 "neutral_blink": SubResource("Animation_hj04k"),
 "worried": SubResource("Animation_5cx0g"),

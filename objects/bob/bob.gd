@@ -10,6 +10,7 @@ var BLINK_TIMER: float = rng.randf_range(BLINK_TIME_MIN, BLINK_TIME_MAX)
 var BLINK_TIME: float = 0
 
 var flipped = false  
+var is_running = true  
 
 enum moods {
 	neutral,
@@ -69,3 +70,17 @@ func _process(delta: float) -> void:
 		$Head.scale.x = -abs($Head.scale.x)
 		$Body.scale.x = -abs($Body.scale.x)
 		flipped = true
+
+	if velocity.is_zero_approx() and is_running:
+		is_running = false
+		$Body/AnimatedSprite2D.stop()
+		$Body/AnimatedSprite2D.play("standing")
+	elif not velocity.is_zero_approx() and not is_running:
+		is_running = true
+		$Body/AnimatedSprite2D.stop()
+		if velocity.x > 0:
+			$Body/AnimatedSprite2D.play("walking")
+		else:
+			$Body/AnimatedSprite2D.play_backwards("walking")
+		
+		

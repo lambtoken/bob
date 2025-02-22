@@ -1,12 +1,15 @@
 extends Area2D
 
-var SPEED: float = 700.0
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
+var speed: float = 700.0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	position += transform.x * SPEED * delta
+	
+	position += transform.x * speed * delta
+
+	# speed decreases gradually
+	speed = lerp(speed, 0.0, 2 * delta)
+
+# Called when the Timer times out
+func _on_timer_timeout() -> void:
+	queue_free()
