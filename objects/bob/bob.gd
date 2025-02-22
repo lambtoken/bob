@@ -9,7 +9,7 @@ const BLINK_TIME_MAX: float = 4
 var BLINK_TIMER: float = rng.randf_range(BLINK_TIME_MIN, BLINK_TIME_MAX)
 var BLINK_TIME: float = 0
 
-var desired_scale = 1  
+var flipped = false  
 
 enum moods {
 	neutral,
@@ -62,6 +62,8 @@ func _process(delta: float) -> void:
 	if mouseX < 0:
 		$Head.scale.x = abs($Head.scale.x)
 		$Body.scale.x = abs($Body.scale.x)
+		flipped = false
 	else:
 		$Head.scale.x = -abs($Head.scale.x)
 		$Body.scale.x = -abs($Body.scale.x)
+		flipped = true

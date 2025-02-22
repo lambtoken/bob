@@ -1,5 +1,6 @@
 extends Sprite2D
 
+@onready var bob = get_parent().get_parent()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,4 +11,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var dist2Mouse: Vector2 = self.global_position - get_global_mouse_position()
 	var angle = atan2(dist2Mouse.y, dist2Mouse.x)
-	rotation = angle
+	if bob.flipped:
+		rotation = PI - angle
+	else:
+		rotation = angle
+	
+	
