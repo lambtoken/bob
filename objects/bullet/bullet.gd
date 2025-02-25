@@ -2,6 +2,9 @@ extends Area2D
 
 var speed: float = 700.0
 
+func _init() -> void:
+	add_to_group("bullet")
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
@@ -13,3 +16,11 @@ func _process(delta: float) -> void:
 # Called when the Timer times out
 func _on_timer_timeout() -> void:
 	queue_free()
+
+
+func _on_area_entered(area: Area2D) -> void:
+	var target = area.get_parent()
+	if target.is_in_group("enemies"):
+		area.get_parent().queue_free()
+		queue_free()
+		

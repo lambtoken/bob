@@ -18,7 +18,10 @@ enum moods {
 }
 
 func _init() -> void:
+	Global.player = self
+	add_to_group("player")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED_HIDDEN)
+
 func _process(delta: float) -> void:
 	
 	var dist2Mouse: Vector2 = get_global_mouse_position() - self.position

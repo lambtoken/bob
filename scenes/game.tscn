@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://78ydajy1ls08"]
+[gd_scene load_steps=4 format=3 uid="uid://78ydajy1ls08"]
 
 [ext_resource type="PackedScene" uid="uid://brqkxwm2xe53t" path="res://objects/bob/bob.tscn" id="1_seitm"]
 [ext_resource type="Texture2D" uid="uid://58vt2vhc33kw" path="res://assets/paper.png" id="2_k0u6u"]
+[ext_resource type="PackedScene" uid="uid://4b7ajum5r6vp" path="res://objects/one/one.tscn" id="3_k7osu"]
 
 [node name="Game" type="Node2D"]
 
@@ -15,3 +16,23 @@ offset_right = 1152.0
 offset_bottom = 1024.0
 texture = ExtResource("2_k0u6u")
 stretch_mode = 1
+
+[node name="One" parent="." instance=ExtResource("3_k7osu")]
+position = Vector2(215, 274)
+scale = Vector2(3, 3)
+
+[node name="One2" parent="." instance=ExtResource("3_k7osu")]
+position = Vector2(310, 66)
+scale = Vector2(3, 3)
+
+[node name="One3" parent="." instance=ExtResource("3_k7osu")]
+position = Vector2(330, 555)
+scale = Vector2(3, 3)
+
+[node name="One4" parent="." instance=ExtResource("3_k7osu")]
+position = Vector2(710, 428)
+scale = Vector2(3, 3)
+
+[node name="One5" parent="." instance=ExtResource("3_k7osu")]
+position = Vector2(146, 461)
+scale = Vector2(3, 3)
