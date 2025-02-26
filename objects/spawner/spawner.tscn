@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq0iup56y7d1d"]
+
+[ext_resource type="Texture2D" uid="uid://cvnwmtd73qwcf" path="res://assets/spawner.png" id="1_05cf1"]
+[ext_resource type="Script" path="res://objects/spawner/spawner.gd" id="2_hrocd"]
+
+[node name="Spawner" type="Sprite2D"]
+texture = ExtResource("1_05cf1")
+script = ExtResource("2_hrocd")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

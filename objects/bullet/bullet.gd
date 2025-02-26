@@ -21,6 +21,11 @@ func _on_timer_timeout() -> void:
 func _on_area_entered(area: Area2D) -> void:
 	var target = area.get_parent()
 	if target.is_in_group("enemies"):
-		area.get_parent().queue_free()
-		queue_free()
+		var enemy = area.get_parent()
+		enemy.CURRENT_HP -= 5
+		enemy.hit()
 		
+		var dir = (enemy.position - Global.player.position).normalized()
+		enemy.knockbackVelocity += dir * 500
+		
+		queue_free()
