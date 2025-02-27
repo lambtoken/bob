@@ -22,7 +22,7 @@ func _on_area_entered(area: Area2D) -> void:
 	var target = area.get_parent()
 	if target.is_in_group("enemies"):
 		var enemy = area.get_parent()
-		enemy.CURRENT_HP -= 5
+		enemy.stats.CURRENT_HP -= 10
 		enemy.hit()
 		
 		var dir = (enemy.position - Global.player.position).normalized()

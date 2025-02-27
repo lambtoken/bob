@@ -1,6 +1,10 @@
 extends Sprite2D
 
-var oneScene = preload("res://objects/one/one.tscn")
+@export var enemyScenes: Array[PackedScene] = [
+	preload("res://objects/mobs/one/one.tscn"),
+	preload("res://objects/mobs/two/two.tscn")
+]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -12,7 +16,8 @@ func _process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	var instance = oneScene.instantiate()
+	var mobType = enemyScenes[Global.rng.randi_range(0, len(enemyScenes) - 1)]
+	var instance = mobType.instantiate()
 	instance.position = position
 	instance.scale = Global.globalScale
 	get_tree().root.add_child(instance)

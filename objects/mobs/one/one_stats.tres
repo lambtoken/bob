@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Mob_stats" load_steps=2 format=3 uid="uid://ciqhfr0h6lvon"]
+
+[ext_resource type="Script" path="res://mob_stats.gd" id="1_svmra"]
+
+[resource]
+script = ExtResource("1_svmra")
+MAX_HP = 10.0
+ATK = 10.0
+SPEED = 200.0

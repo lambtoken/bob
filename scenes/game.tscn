@@ -15,6 +15,9 @@ font_color = Color(1, 0.133333, 1, 1)
 position = Vector2(475, 180)
 scale = Vector2(3, 3)
 
+[node name="Camera2D" type="Camera2D" parent="Bob"]
+position_smoothing_enabled = true
+
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -2
 offset_right = 1152.0
