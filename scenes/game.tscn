@@ -1,18 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://78ydajy1ls08"]
+[gd_scene load_steps=7 format=3 uid="uid://78ydajy1ls08"]
 
 [ext_resource type="PackedScene" uid="uid://brqkxwm2xe53t" path="res://objects/bob/bob.tscn" id="1_seitm"]
 [ext_resource type="Texture2D" uid="uid://58vt2vhc33kw" path="res://assets/paper.png" id="2_k0u6u"]
 [ext_resource type="Script" path="res://scenes/label.gd" id="4_ju3yw"]
 [ext_resource type="PackedScene" uid="uid://bq0iup56y7d1d" path="res://objects/spawner/spawner.tscn" id="4_y8n61"]
+[ext_resource type="PackedScene" uid="uid://bvq5bwow1vtgj" path="res://objects/terrain/walls.tscn" id="5_8xeyf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2fv4w"]
 font_size = 41
-font_color = Color(1, 0.133333, 1, 1)
+font_color = Color(0, 0, 0, 1)
 
 [node name="Game" type="Node2D"]
 
 [node name="Bob" parent="." instance=ExtResource("1_seitm")]
-position = Vector2(475, 180)
+position = Vector2(606, 341)
 scale = Vector2(3, 3)
 
 [node name="Camera2D" type="Camera2D" parent="Bob"]
@@ -20,17 +21,26 @@ position_smoothing_enabled = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -2
-offset_right = 1152.0
+offset_left = 5.0
+offset_right = 1516.0
 offset_bottom = 1024.0
 texture = ExtResource("2_k0u6u")
 stretch_mode = 1
 
 [node name="Spawner" parent="." instance=ExtResource("4_y8n61")]
-position = Vector2(136, 155)
+visible = false
+position = Vector2(241, 552)
 
-[node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Walls" parent="." instance=ExtResource("5_8xeyf")]
+scale = Vector2(3, 3)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 29.0
+offset_top = 19.0
+offset_right = 184.0
+offset_bottom = 76.0
 text = "Score: 0"
 label_settings = SubResource("LabelSettings_2fv4w")
 script = ExtResource("4_ju3yw")

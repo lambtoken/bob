@@ -85,5 +85,3 @@ func _process(delta: float) -> void:
 			$Body/AnimatedSprite2D.play("walking")
 		else:
 			$Body/AnimatedSprite2D.play_backwards("walking")
-		
-		

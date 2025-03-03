@@ -22,10 +22,15 @@ func _on_area_entered(area: Area2D) -> void:
 	var target = area.get_parent()
 	if target.is_in_group("enemies"):
 		var enemy = area.get_parent()
-		enemy.stats.CURRENT_HP -= 10
+		enemy.stats.CURRENT_HP -= 5
 		enemy.hit()
 		
 		var dir = (enemy.position - Global.player.position).normalized()
 		enemy.knockbackVelocity += dir * 500
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		return
 		
-		queue_free()
+	queue_free()

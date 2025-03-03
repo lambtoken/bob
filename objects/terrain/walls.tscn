@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=4 uid="uid://bvq5bwow1vtgj"]
+
+[ext_resource type="Texture2D" uid="uid://bfd0vpmbqx0jy" path="res://assets/bobwalls.png" id="1_iro7c"]
+[ext_resource type="Script" path="res://objects/terrain/walls.gd" id="2_2hf1t"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qii35"]
+texture = ExtResource("1_iro7c")
+texture_region_size = Vector2i(32, 32)
+0:0/next_alternative_id = 2
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_b4s6b"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/2 = SubResource("TileSetAtlasSource_qii35")
+
+[node name="Walls" type="TileMapLayer"]
+tile_map_data = PackedByteArray("AAAAAAAAAgADAAAAAAABAAAAAgAEAAAAAAACAAAAAgAEAAAAAAADAAAAAgAEAAAAAAAEAAAAAgAEAAAAAAAFAAAAAgAEAAAAAAAGAAAAAgAEAAAAAAAHAAAAAgAEAAAAAAAAAAEAAgADAAEAAAAAAAIAAgADAAEAAAAAAAMAAgADAAEAAAAAAAQAAgADAAEAAAAAAAUAAgADAAEAAAAMAAAAAgAEAAAAAAALAAAAAgAEAAAAAAAKAAAAAgAEAAAAAAAJAAAAAgAEAAAAAAAIAAAAAgAEAAAAAAANAAAAAgAEAAAAAAAOAAAAAgAEAAAAAAAPAAAAAgAFAAAAAAAAAAoAAgADAAIAAAABAAoAAgAEAAIAAAACAAoAAgAEAAIAAAADAAoAAgAEAAIAAAAEAAoAAgAEAAIAAAAFAAoAAgAEAAIAAAAGAAoAAgAEAAIAAAAHAAoAAgAEAAIAAAAIAAoAAgAEAAIAAAAJAAoAAgAEAAIAAAAKAAoAAgAEAAIAAAALAAoAAgAEAAIAAAAMAAoAAgAEAAIAAAANAAoAAgAEAAIAAAAOAAoAAgAEAAIAAAAPAAoAAgAFAAIAAAAPAAEAAgAFAAEAAAAPAAIAAgAFAAEAAAAPAAMAAgAFAAEAAAAPAAQAAgAFAAEAAAAPAAUAAgAFAAEAAAAPAAYAAgAFAAEAAAAPAAcAAgAFAAEAAAAPAAgAAgAFAAEAAAAPAAkAAgAFAAEAAAAAAAYAAgADAAEAAAAAAAcAAgADAAEAAAAAAAgAAgADAAEAAAAAAAkAAgADAAEAAAA=")
+tile_set = SubResource("TileSet_b4s6b")
+script = ExtResource("2_2hf1t")
