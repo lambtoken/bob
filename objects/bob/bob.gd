@@ -59,7 +59,6 @@ func _process(delta: float) -> void:
 	if BLINK_TIME > BLINK_TIMER:
 		BLINK_TIME = 0
 		BLINK_TIMER = rng.randf_range(BLINK_TIME_MIN, BLINK_TIME_MAX)
-		#play blink animation
 	
 	BLINK_TIME += delta
 	

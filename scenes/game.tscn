@@ -44,3 +44,5 @@ offset_bottom = 76.0
 text = "Score: 0"
 label_settings = SubResource("LabelSettings_2fv4w")
 script = ExtResource("4_ju3yw")
+
+[node name="SubViewport" type="SubViewport" parent="."]

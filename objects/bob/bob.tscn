@@ -335,6 +335,7 @@ animations = [{
 }]
 
 [node name="Bob" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_3uvjw")
 
 [node name="Head" type="CollisionShape2D" parent="."]

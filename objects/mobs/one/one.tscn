@@ -71,6 +71,7 @@ _data = {
 }
 
 [node name="One" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_2t0ke")
 stats = ExtResource("2_5och8")
 
